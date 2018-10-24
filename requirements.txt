@@ -1,1 +1,2 @@
 boto3==1.7.58
+python-digitalocean==1.13.2

@@ -3,7 +3,8 @@ import re
 from setuptools import setup
 
 REQUIRES = [
-    'boto3'
+    'boto3',
+    'python-digitalocean'
 ]
 
 
