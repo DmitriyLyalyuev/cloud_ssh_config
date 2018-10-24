@@ -15,7 +15,7 @@ import cloud_ssh_config.ssh_config.ssh_config as ssh_config
 parser = argparse.ArgumentParser(
                     description='Get host names and ip adresses from a cloud')
 parser.add_argument("cloud",
-                    help="Supported clouds: aws")
+                    help="Supported clouds: aws, digitalocean")
 parser.add_argument('-U', '--ssh_user',
                     help='SSH user')
 parser.add_argument('-P', '--prefix', default='',

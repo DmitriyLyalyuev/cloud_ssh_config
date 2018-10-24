@@ -60,3 +60,10 @@ To get it working you need to run:
 Enter your credentials to get access to the AWS API.
 
 Or you can use [environment variables](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html#environment-variable-configuration).
+
+### DigitalOcean
+
+Before use it you need register [token](https://cloud.digitalocean.com/account/api/tokens) and run it like:
+
+    $ cloud_ssh_config digitalocean --token place_your_token_here
+
