@@ -4,7 +4,8 @@ clean:
 	rm -rf dist
 
 build: clean
-	python3 setup.py sdist bdist_wheel
+	python3 setup.py sdist bdist_wheel --universal
+	gpg --detach-sign -a dist/*
 
 upload:
-	python3 -m twine upload  dist/*`cat cloud_ssh_config/__init__.py | awk '{print $$3}' | tr -d '"'`*
+	python3 -m twine upload  dist/*
