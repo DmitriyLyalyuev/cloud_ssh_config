@@ -4,7 +4,8 @@ from setuptools import setup
 
 REQUIRES = [
     'boto3',
-    'python-digitalocean'
+    'python-digitalocean',
+    'scaleway-sdk'
 ]
 
 

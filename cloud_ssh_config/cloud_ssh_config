@@ -24,10 +24,16 @@ parser.add_argument('-K', '--ssh_key', default='~/.ssh/id_rsa',
                     help='Prefix for hosts')
 parser.add_argument('-T', '--token',
                     help='API token')
+parser.add_argument('-R', '--region', default='ams1',
+                    help='Region for ScaleWay cloud')
 
 args = parser.parse_args()
 
 if args.cloud == 'digitalocean' and args.token is None:
+    print("Not enough args: --token required to access to digitalocean's API")
+    sys.exit(1)
+
+if args.cloud == 'scaleway' and args.token is None:
     print("Not enough args: --token required to access to digitalocean's API")
     sys.exit(1)
 
@@ -43,6 +49,9 @@ if args.cloud == 'aws':
 elif args.cloud == 'digitalocean':
     from cloud_ssh_config.cloud import do
     cloud = do.cloud(args.token)
+elif args.cloud == 'scaleway':
+    from cloud_ssh_config.cloud import scaleway
+    cloud = scaleway.cloud(region=args.region, token=args.token)
 hosts = cloud.get_hosts()
 
 if hosts:
