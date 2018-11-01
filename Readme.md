@@ -67,3 +67,12 @@ Before use it you need register [token](https://cloud.digitalocean.com/account/a
 
     $ cloud_ssh_config digitalocean --token place_your_token_here
 
+### Scale Way
+
+To get it working you should get [API token](https://cloud.scaleway.com/#/credentials).
+
+    $ cloud_ssh_config digitalocean --token place_your_token_here
+
+Sure you can specify region (default is `ams1`):
+
+    $ cloud_ssh_config digitalocean --token place_your_token_here -R par1
